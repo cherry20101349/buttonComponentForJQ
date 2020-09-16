@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <el-button btnText="确定" @clickbtn="save" :loading="loading" disabled></el-button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="button.js"></script>
+<script>
+    console.dir(Vue.component);
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            loading: false
+        },
+        created: function () {
+        },
+        methods: {
+            save: function () {
+                console.log(1);
+            },
+            cancel: function () {
+                console.log(2);
+            }
+        }
+    })
+</script>
+</body>
+</html>
