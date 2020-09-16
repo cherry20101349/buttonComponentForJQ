@@ -1,22 +1,17 @@
 
 Vue.component('el-button', {
     props: {
-        // 组件文字
-        btnText: {
-            title: String,
-            default: '标题'
-        },
-        // 组件图标
+        // 按钮图标
         icon: {
             type: String,
             default: ''
         },
-        // 组件类型
+        // 按钮类型
         type: {
             type: String,
             default: 'blue'
         },
-        // 组件大小
+        // 按钮大小
         size: {
             type: String,
             default: 'normal'
@@ -29,7 +24,7 @@ Vue.component('el-button', {
     data: function () {
         return {}
     },
-    template: '<button class="elButton" :class="getClassName()" @click="clickShadowBtn"><i v-if="icon" :class="icon"></i>{{btnText}}</button>',
+    template: '<button class="elButton" :class="getClassName()" @click="clickShadowBtn"><i v-if="icon" :class="icon"></i><slot></slot></button>',
     methods: {
         getClassName: function () {
             return this.type + ' ' + this.size
