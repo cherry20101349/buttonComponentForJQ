@@ -38,3 +38,21 @@
     border-color: #66b1ff;
     color: #fff;
 }
+
+.el-button.is-loading {
+    position: relative;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.el-button.is-loading:before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    background-color: hsla(0, 0%, 100%, .35);
+}

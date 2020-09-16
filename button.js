@@ -1,4 +1,3 @@
-
 Vue.component('el-button', {
     props: {
         // 按钮图标
@@ -16,22 +15,15 @@ Vue.component('el-button', {
             type: String,
             default: 'normal'
         },
+        // 加载中
         loading: {
             type: Boolean,
             default: false
         }
     },
-    data: function () {
-        return {}
-    },
-    template: '<button class="el-button" :class="getClassName()" @click="clickShadowBtn"><i v-if="icon" :class="icon"></i><slot></slot></button>',
+    template: '<button class="el-button" :class="[{\'is-loading\' : loading}, type, size]" @click="clickBtn"><i v-if="icon" :class="icon"></i><slot></slot></button>',
     methods: {
-        getClassName: function () {
-            return this.type + ' ' + this.size
-        },
-        clickShadowBtn: function () {
-            console.log(1);
-            //this.btnText = '加载中'
+        clickBtn: function () {
             // this.$emit方法不能使用驼峰命名的函数
             this.$emit('clickbtn')
         }

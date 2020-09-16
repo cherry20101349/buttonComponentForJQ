@@ -8,7 +8,7 @@
 <body>
 <div id="app">
     <el-button @clickbtn="save" type="primary" :loading="loading">确定</el-button>
-    <el-button @clickbtn="save" :loading="loading">取消</el-button>
+    <el-button @clickbtn="cancel">取消</el-button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,7 +24,12 @@
         },
         methods: {
             save: function () {
+                this.loading = true;
                 console.log(1);
+                setTimeout(function(){
+                    alert();
+                    this.loading = false;
+                },3000)
             },
             cancel: function () {
                 console.log(2);
