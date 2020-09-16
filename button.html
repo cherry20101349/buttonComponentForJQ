@@ -25,10 +25,8 @@
         methods: {
             save: function () {
                 this.loading = true;
-                console.log(1);
                 setTimeout(function(){
-                    alert();
-                    this.loading = false;
+                    vm.loading = false;
                 },3000)
             },
             cancel: function () {

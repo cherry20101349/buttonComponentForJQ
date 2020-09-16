@@ -25,7 +25,7 @@ Vue.component('el-button', {
     methods: {
         clickBtn: function () {
             // this.$emit方法不能使用驼峰命名的函数
-            this.$emit('clickbtn')
+            this.$emit('clickbtn');
         }
     }
 });
